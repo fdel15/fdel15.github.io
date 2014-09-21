@@ -1,4 +1,5 @@
 U1.WK1. Cultural Blog
+
 Fireside Chat with Shereef: Kitchen vs Table
 
 09/20/2014
