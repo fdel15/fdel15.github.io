@@ -1,0 +1,31 @@
+#content {
+    margin: auto;
+    max-width: 50%;
+    border: 3.5px solid #A9A9A9;
+    border-radius: 15px;
+  }
+
+  #content p {
+    padding-left: 1.0em;
+    font-family: arial;
+  }
+
+  #created {
+    border: 2px solid #A9A9A9;
+    margin-top: .8em;
+    max-width: 25%;
+  }
+
+  #created p {
+    text-align: center;
+    font-family: arial;
+    font-size: 0.8em;
+  }
+
+  h3 {
+    text-align: center;
+    font-weight: bold;
+    font-family: arial, sans-serif;
+    font-size: 2.0em;
+    margin-bottom: 6px;
+  }
