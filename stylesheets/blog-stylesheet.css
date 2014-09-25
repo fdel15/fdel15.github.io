@@ -29,3 +29,7 @@
     font-size: 2.0em;
     margin-bottom: 6px;
   }
+
+  html img {
+    max-width: 90%;
+  }
