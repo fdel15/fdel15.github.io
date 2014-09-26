@@ -1,4 +1,3 @@
-
 body {
   position: absolute;
   width: 100%;
@@ -39,29 +38,40 @@ position: relative;
 bottom: 0;
 width: 100%;
 text-align: center;
+clear: both;
 }
 #social_links {
   display: inline-block;
 }
 
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  width: 40%;
-  padding: 5px;
+#profile_photo {
+  float: left;
+  width: 25%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-left: 15%;
 }
 
-.title {
-  font-size: 1.25em;
-  margin:auto;
-  font-weight: bold;
-  font-family: fantasy, serif;
+#profile_photo img {
+  display: inline;
+  max-width: 85%;
+}
+
+#quote {
+  float:right;
+  width: 35%;
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  margin-right: 24%;
+
+
+}
+
+#quote p {
+  max-width: 95%;
+  font-family: cursive;
+  font-size: 1.85em;
   color: white;
-}
-
-.preview {
-  color: black;
   font-weight: bold;
-  font-family: monospace;
 }
