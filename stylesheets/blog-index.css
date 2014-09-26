@@ -1,0 +1,63 @@
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(http://www.theworkingworld.org/images/NYSkyline.jpg);
+}
+
+#navbar {
+  position: fixed, center;
+  margin: auto;
+  border: 4px solid black;
+  border-radius: 5px;
+  background-color: #000099;
+  width: 50%;
+  text-align: center;
+}
+
+#navbar a{
+  color: silver;
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  color: silver;
+  font-size: 30px;
+  margin: 10px;
+}
+
+#footer {
+position: relative;
+bottom: 0;
+width: 100%;
+text-align: center;
+}
+#social_links {
+  display: inline-block;
+}
+
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 40%;
+  padding: 5px;
+}
+
+.title {
+  font-size: 1.25em;
+  margin:auto;
+  font-weight: bold;
+  font-family: fantasy, serif;
+  color: white;
+}
+
+.preview {
+  color: black;
+  font-weight: bold;
+  font-family: monospace;
+}
