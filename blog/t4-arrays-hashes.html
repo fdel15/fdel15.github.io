@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheets/blog-stylesheet.css" />
+    </head>
+    <title>Arrays and Hashes</title>
+    <body>
+    <h3>Arrays and Hashes</h3>
+    <div id="content">
+      <p>Arrays and hashes are both ruby objects that are used to store collections of data. They are similar in many ways but there are some key differences.
+
+In an array, each object has a unique key assigned to it. We can access any object in the array using this unique key. The positions in an array starts from “0”. The first element is located at “0”, the second at “1” etc…
+
+animals = [“dog”, “cat”, “bird”, “frog”, “cow”]
+
+In the example above, animals is the name of the array. The elements of the array are strings. You can call each element using it’s index. For example:
+
+animals[0] = “dog”
+animals[1] = “cat”
+animals[2] = “bird”
+animals[3] = “frog”
+animals[4] = “cow”
+
+If you wanted to add a new animal to the array, you would assign the next index to the type of animal you wanted to add. For example, to add a lizard you would type:
+
+animals[5] = “lizard”
+
+animals = [“dog”, “cat”, “bird”, “frog”, “cow”, “lizard”]
+
+In a hash, each object is assigned a unique key and a value. Where arrays use integers as it’s index, hashes allow you to use any object type.
+
+animals = {
+    :dog => “Buddy”,
+    :cat => “Oscar”,
+    :bird => “Tweety”,
+    :frog => “Kermit”,
+    :cow => “Betsy”,
+}
+
+In this example the key value is a symbol (that is why it is preceded by the :) of the type of animal, and the value is the name for that particular animal. To get the name of each animal, you can call the key associated with it. For example:
+
+animals[:dog] = “Buddy”
+animals[:frog] = “Kermit”
+
+To add a new element to the array, you would need to assign a new key value pair. For example, if you wanted to add a lizard named Lizzy to your animals hash you would type the following:
+
+animals[:lizard] => “Lizzy”
+
+animals = {
+    :dog => “Buddy”,
+    :cat => “Oscar”,
+    :bird => “Tweety”,
+    :frog => “Kermit”,
+    :cow => “Betsy”,
+    :lizard => “Lizzy”,
+}
+
+Hopefully this post helps you understand the difference between hashes and arrays a little bit better! Thanks for reading</p> <!-- blog post goes here -->
+    </div>
+    <div id="created">
+    <p>Frank DelPidio 10/05/2014</p> <!--Author and date posted -->
+    </div>
+    </body>
+  </html>
