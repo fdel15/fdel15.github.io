@@ -1,0 +1,59 @@
+/* include your css here */
+h3 {
+  text-align: center;
+  font-size: 24px;
+}
+
+p {
+  text-align: center;
+}
+
+.question {
+  display:inline-block;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5px;
+  background-color: blue;
+  border: 2px black solid;
+  border-radius: 5px;
+  padding: 1.5em;
+}
+
+.question h2 {
+  color: red;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.question p {
+  position:relative;
+  display:inline-block;
+  width: 40%;
+  color: white;
+  text-align: left;
+  font-size: 1.5em
+  
+}
+
+#q1 {
+  display: inline-block;
+  width: 50%;
+  margin-left: 7%;
+  
+}
+
+#q3 {
+  display: inline-block;
+  width: 50%;
+  margin-left: 7%;
+  position: relative;
+  bottom: 4.5em
+}
+
+#q2 {
+  display: inline-block;
+  width: 50%;
+  margin-right: 7%;
+  position: relative;
+  bottom: 2em;
+}
