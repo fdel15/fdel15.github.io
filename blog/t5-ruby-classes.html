@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheets/blog-stylesheet.css" />
+    </head>
+    <title>Classes</title>
+    <body>
+    <h3>Ruby Classes</h3>
+    <div id="content">
+      <p>Classes are very useful objects in Ruby. Defining a class is a way to organize objects and methods into convenient bundles. Classes can be described as the blueprints for object creation. Every object in Ruby is the construct of some class. The goal of this blog post is to try to explain when, why, and how to implement classes in Ruby by creating an example class.
+        <br><br>
+    The first question we need to answer is when do we want to create a class? To answer that question, let’s look at why we like to use classes. Classes allow you to quickly create many objects that behave essentially the same way. Every object created by the class will have access to instant methods and instant variables .
+<br><br>
+    Let’s assume you want to create a program all about dogs. Every dog has a name, an age, and can bark. But not every dog has the same age or name, and some dogs may even being trained to do tricks. Making a class called Dogs makes sense here.
+    <br><br>
+
+    You define a class with the keyword “class”. Classes are named with constants which means they begin with a capital letter. Our class name is going to be dogs.
+    <br><br>
+
+class Dogs<br>
+end<br><br>
+
+We have created our class Dogs, only it doesn’t do anything! It is time to start adding some methods to our class. <br><br>
+
+The first and most important method we want to add to our class is the initialize method. The initialize method is a special method in ruby programs. This method is automatically run every time a new instance of the class is created. It tells the object to set its internal state up according to the parameters requested. Going back to our dog example, the two things we want to know about each dog before it is created are its name and age. <br><br>
+
+class Dogs<br>
+    def initialize(name, age)<br>
+        @name = name<br>
+        @age = age<br>
+    end<br>
+end<br><br>
+
+What the heck is going on in the inside of the method? The @ sign signifies that a special kind of variable in Ruby called an instant variable. What makes instant variables special is that they can be referenced from anywhere inside our class object. The parameters we are given are turned into instance variables. <br><br>
+
+
+To create a new instance of a dog you would need to call the new method on the Dog class and provide the information for the parameters. <br><br>
+
+Dog.new(“Bigsby”, “1”)<br><br>
+
+This class is not very useful because it does not return anything to the screen. What if you want to print the name of the dog or your dog has a birthday?
+<br><br>
+class Dogs <br>
+  attr_accessor :name, :age <br>
+    def initialize(name, age) <br>
+        @name = name <br>
+        @age = age <br>
+    end <br>
+end <br><br>
+
+Introducing attr_accessor. Attr_accessor is a Ruby shortcut that creates a setter and getter method for :name and :age. We can now return our dogs name and age as well as change them if we want. This allows us to do things like this: <br><br>
+
+my_dog = Dog.new(“Bigsby”, “1”) <br><br>
+
+my_dog.name == “Bigsby” <br>
+my_dog.age == 1 <br><br>
+
+#Your dog had a birthday!!<br><br>
+
+my_dog.name = 2 <br><br>
+
+my_dog.name == 2 <br><br>
+
+Now let’s add some methods to our class! We want all our dogs to be able to bark, and some of our dogs know how to sit.  We are going to create instant methods which are going to be available to all instances of the class that are created. <br><br>
+
+class Dogs <br>
+  attr_accessor :name, :age <br>
+    def initialize(name, age) <br>
+        @name = name <br>
+        @age = age <br>
+    end<br><br>
+
+    def bark<br>
+    puts “Ruff! Ruff!” <br>
+    end<br><br>
+
+    def sit<br>
+    @age > 1 ? puts “#{@name} sits and wags his tail! Good boy!” : puts “#{@name} bites you in the ankle! Bad dog!”<br>
+    end<br>
+end<br><br>
+
+All of the dogs we create now can bark, however only dogs who are older than 1 years old will have learned how to sit. Notice how we use the instant variables defined in the initialize method in our instant method. <br><br>
+
+These are just the very basics of the Classes in Ruby. Hopefully after reading through this blog post the following code below makes sense to you! Thanks for reading! <br><br>
+
+my_dog = Dog.new(“Bigsby”, 1)<br><br>
+
+my_dog.name == “Bigsby” <br>
+my_dog.age == 1 <br>
+my_dog.bark == “Ruff! Ruff!” <br>
+my_dog.sit == “Bigsby bites you in the ankle! Bad dog!” <br>
+my_dog.age = 2 <br>
+my_dog.sit == “Bigsby sits and wags his tail! Good boy!” <br>
+
+    </p> <!-- blog post goes here -->
+    </div>
+    <div id="created">
+    <p>Frank DelPidio 10/20/2014</p> <!--Author and date posted -->
+    </div>
+    </body>
+  </html>
