@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheets/blog-stylesheet.css" />
+    </head>
+    <title></title>
+    <body>
+    <h3>Blocks, Procs, And Lambdas</h3>
+    <div id="content">
+      <p>If you couldn’t tell by the title, this blog post is going to be about Blocks, Procs, and Lambdas in Ruby. These terms can be confusing since they are often used interchangeably in Ruby. I am going to define each of these terms, explain the differences between them, and provide some examples.<br><br>
+
+Blocks<br><br>
+
+A Block in Ruby can be defined as a bit of code that can be executed. Blocks can be combined with methods to execute an instruction for each element in a collection. The syntax for creating blocks is either the key words do…end or by using brackets { }. Blocks can be created implicitly when invoking a method, explicitly using Proc.new, and explicitly using the Kernel#lambda factory method. <br><br>
+
+
+Methods that accept blocks have a way of transferring control from the calling method to the block and back again. The .map method is an example of a method in Ruby that accepts blocks: <br><br>
+
+integers = [1,2,3]
+integers.map{ | int | int * 2 } => [2,4,6]<br><br>
+
+Blocks are one of the few things in Ruby that are not objects. This means that Blocks cannot be saved to variables and do not have all the powers and abilities of a real object. These limitations are the reason why Procs exist in Ruby. <br><br>
+
+Procs<br><br>
+
+Procs can be defined as saved blocks. They have all the same characteristics of a Block except that they are Objects in Ruby. Procs are great for keeping your code DRY because they can be called over and over again without rewriting them. To create a new Proc, you create an instance of the Proc class:<br><br>
+
+cube = Proc.new { |x| x ** 3 }<br><br>
+
+There are two ways you can call a Proc that you have created. You can call the Proc directly using the .call method. <br><br>
+
+new_proc = Proc.new{puts “I’m a Proc!}<br>
+new_proc.call => “I’m a Proc!”<br>
+
+When calling a proc in a method that accepts blocks you use & to convert the Proc into a Block. <br><br>
+
+cube = Proc.new { |x| x ** 3 }<br>
+[1, 2, 3].collect(&cube) => [1, 8, 27]<br>
+
+Lambdas<br><br>
+
+Lambdas are exactly like Procs except for two major differences. The first major difference is that Lambda’s check the number of arguments passed it to it. This means that they will throw an error message if you pass the wrong number of arguments. <br><br>
+
+new_lambda = lambda {|a,b| a + b} <br>
+new_proc = Proc.new {|a,b| a + b}<br><br>
+
+new_lambda.call(2,3) ==> 5 <br>
+new_proc.call(2,3) ==> 5 <<br><br>
+
+new_lambda.call(2,3,4) ==> ArgumentError: wrong number of arguments (3 for 2) <br>
+new_proc.call(2,3,4) ==> 5 <br><br>
+
+
+The second major difference is that after a Lambda is executed in a method, it hands control back to the controlling method instead of exiting the method all together. <br><br>
+
+def a_method <br>
+ Proc.new { return "we just returned from the block" }.call <br>
+ return "we just returned from the calling method" <br>
+end<br><br>
+
+output: we just returned from the block<br><br>
+
+def a_method<br>
+ lambda { return "we just returned from the block" }.call<br>
+ return "we just returned from the calling method"<br>
+end<br><br>
+
+output: : we just returned from the calling method<br><br>
+
+Hopefully you now have a better understanding of the fundamental differences between Blocks, Procs, and Lambdas. Thanks for reading.</p> <!-- blog post goes here -->
+    </div>
+    <div id="created">
+    <p>Frank DelPidio 10/26/2014</p> <!--Author and date posted -->
+    </div>
+    </body>
+  </html>
