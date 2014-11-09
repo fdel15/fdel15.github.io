@@ -202,8 +202,8 @@ CODE EXAMPLES
   font-style: Arial, sans-serif;
   font-size: 1.15em;
   border-radius: 10px;
-  margin: 0 5px 0 0;
-  padding: 10px;
+  margin: 0;
+  padding: 10px 10px 0 0;
   width: 100%;
 }
 
