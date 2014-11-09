@@ -1,76 +1,139 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-    <link type="text/css" rel="stylesheet" href="../stylesheets/blog-stylesheet.css" />
-    </head>
-    <title></title>
-    <body>
-    <h3>Blocks, Procs, And Lambdas</h3>
-    <div id="content">
-      <p>If you couldn’t tell by the title, this blog post is going to be about Blocks, Procs, and Lambdas in Ruby. These terms can be confusing since they are often used interchangeably in Ruby. I am going to define each of these terms, explain the differences between them, and provide some examples.<br><br>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Frank DelPidio | Web Developer</title>
+    <link rel="stylesheet" href="../css/normalize.css" >
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <h1>Frank DelPidio</h1>
+        <h2>Web Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="blog/index.html" class="selected">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section id="primary">
+        <h3>Blocks, Procs, And Lambdas</h3> <!--Title Of Blog Post -->
 
-Blocks<br><br>
+        <p class="date">October 26th, 2014</p> <!--Date -->
 
-A Block in Ruby can be defined as a bit of code that can be executed. Blocks can be combined with methods to execute an instruction for each element in a collection. The syntax for creating blocks is either the key words do…end or by using brackets { }. Blocks can be created implicitly when invoking a method, explicitly using Proc.new, and explicitly using the Kernel#lambda factory method. <br><br>
+        <p>If you couldn’t tell by the title, this blog post is going to be about Blocks, Procs, and Lambdas in Ruby. These terms can be confusing since they are often used interchangeably in Ruby. I am going to define each of these terms, explain the differences between them, and provide some examples.</p>
+
+        <h4>Blocks</h4>
+
+        <p>A Block in Ruby can be defined as a bit of code that can be executed. Blocks can be combined with methods to execute an instruction for each element in a collection. The syntax for creating blocks is either the key words do…end or by using brackets { }. Blocks can be created implicitly when invoking a method, explicitly using Proc.new, and explicitly using the Kernel#lambda factory method. </p>
+
+        </p>Methods that accept blocks have a way of transferring control from the calling method to the block and back again. The .map method is an example of a method in Ruby that accepts blocks:</p>
+
+        <ul class="code-example">
+          <li>integers = [1,2,3]</li>
+          <li>integers.map{ | int | int * 2 } => [2,4,6]</li>
+        </ul>
+
+        <p>Blocks are one of the few things in Ruby that are not objects. This means that Blocks cannot be saved to variables and do not have all the powers and abilities of a real object. These limitations are the reason why Procs exist in Ruby.</p>
+
+        <h4>Procs</h4>
+
+        <p>Procs can be defined as saved blocks. They have all the same characteristics of a Block except that they are Objects in Ruby. Procs are great for keeping your code DRY because they can be called over and over again without rewriting them. To create a new Proc, you create an instance of the Proc class:</p>
+
+        <p class="code-example">cube = Proc.new { |x| x ** 3 }</p>
+
+        <p>There are two ways you can call a Proc that you have created. You can call the Proc directly using the .call method.</p>
+
+        <ul class="code-example">
+          <li>new_proc = Proc.new{puts “I’m a Proc!}</li>
+          <li>new_proc.call => “I’m a Proc!”</li>
+        </ul>
+
+        <p>When calling a proc in a method that accepts blocks you use & to convert the Proc into a Block.</p>
+
+        <ul class="code-example">
+          <li>cube = Proc.new { |x| x ** 3 }</li>
+          <li>[1, 2, 3].collect(&cube) => [1, 8, 27]</li>
+        </ul>
+
+        <h4>Lambdas</h4>
+
+        <p>Lambdas are exactly like Procs except for two major differences. The first major difference is that Lambda’s check the number of arguments passed it to it. This means that they will throw an error message if you pass the wrong number of arguments.</p>
+
+        <ul class="code-example">
+          <li class="lambda">new_lambda = lambda {|a,b| a + b} </li>
+          <li class="proc">new_proc = Proc.new {|a,b| a + b}</li>
+
+          <li class="lambda">new_lambda.call(2,3) ==> 5 </li>
+          <li class="proc">new_proc.call(2,3) ==> 5 </li>
+
+          <li class="lambda">new_lambda.call(2,3,4) ==> ArgumentError: wrong number of arguments (3 for 2) </li>
+          <li class="proc">new_proc.call(2,3,4) ==> 5 </li>
+        </ul>
+
+        <p>The second major difference is that after a Lambda is executed in a method, it hands control back to the controlling method instead of exiting the method all together.</p>
+
+        <div class="code-example">
+          <ul class="method">
+            <li>def a_method</li>
+              <li class="method-def">Proc.new { return "we just returned from the block" }.call</li>
+              <li class="method-def">return "we just returned from the calling method"</li>
+            <li>end</li>
+            <li class="output">output: we just returned from the block</li>
+          </ul>
 
 
-Methods that accept blocks have a way of transferring control from the calling method to the block and back again. The .map method is an example of a method in Ruby that accepts blocks: <br><br>
+          <ul class="method">
+            <li>def a_method</li>
+              <li class="method-def">lambda { return "we just returned from the block" }.call</li>
+              <li class="method-def">return "we just returned from the calling method"</li>
+            <li>end</li>
+            <li class="output">output: : we just returned from the calling method</li>
+          </ul>
+        </div>
 
-integers = [1,2,3]
-integers.map{ | int | int * 2 } => [2,4,6]<br><br>
-
-Blocks are one of the few things in Ruby that are not objects. This means that Blocks cannot be saved to variables and do not have all the powers and abilities of a real object. These limitations are the reason why Procs exist in Ruby. <br><br>
-
-Procs<br><br>
-
-Procs can be defined as saved blocks. They have all the same characteristics of a Block except that they are Objects in Ruby. Procs are great for keeping your code DRY because they can be called over and over again without rewriting them. To create a new Proc, you create an instance of the Proc class:<br><br>
-
-cube = Proc.new { |x| x ** 3 }<br><br>
-
-There are two ways you can call a Proc that you have created. You can call the Proc directly using the .call method. <br><br>
-
-new_proc = Proc.new{puts “I’m a Proc!}<br>
-new_proc.call => “I’m a Proc!”<br>
-
-When calling a proc in a method that accepts blocks you use & to convert the Proc into a Block. <br><br>
-
-cube = Proc.new { |x| x ** 3 }<br>
-[1, 2, 3].collect(&cube) => [1, 8, 27]<br>
-
-Lambdas<br><br>
-
-Lambdas are exactly like Procs except for two major differences. The first major difference is that Lambda’s check the number of arguments passed it to it. This means that they will throw an error message if you pass the wrong number of arguments. <br><br>
-
-new_lambda = lambda {|a,b| a + b} <br>
-new_proc = Proc.new {|a,b| a + b}<br><br>
-
-new_lambda.call(2,3) ==> 5 <br>
-new_proc.call(2,3) ==> 5 <<br><br>
-
-new_lambda.call(2,3,4) ==> ArgumentError: wrong number of arguments (3 for 2) <br>
-new_proc.call(2,3,4) ==> 5 <br><br>
-
-
-The second major difference is that after a Lambda is executed in a method, it hands control back to the controlling method instead of exiting the method all together. <br><br>
-
-def a_method <br>
- Proc.new { return "we just returned from the block" }.call <br>
- return "we just returned from the calling method" <br>
-end<br><br>
-
-output: we just returned from the block<br><br>
-
-def a_method<br>
- lambda { return "we just returned from the block" }.call<br>
- return "we just returned from the calling method"<br>
-end<br><br>
-
-output: : we just returned from the calling method<br><br>
-
-Hopefully you now have a better understanding of the fundamental differences between Blocks, Procs, and Lambdas. Thanks for reading.</p> <!-- blog post goes here -->
-    </div>
-    <div id="created">
-    <p>Frank DelPidio 10/26/2014</p> <!--Author and date posted -->
-    </div>
-    </body>
-  </html>
+        <p>Hopefully you now have a better understanding of the fundamental differences between Blocks, Procs, and Lambdas. Thanks for reading.</p> <!--Blog Post Content -->
+      </section>
+      <section id="secondary">
+        <h3>Technical Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+         <li><a href="t1-git-blog.html">Version Control, Git, and GitHub</a></li>
+         <li><a href="t2-css-design.html">ID's, Classes, And Best Practices</a></li>
+         <li><a href="t3-arrays-hashes.html">Arrays And Hashes</a></li>
+         <li><a href="t4-enumberable-methods.html">Enumerable Methods</a></li>
+         <li><a href="t5-ruby-classes.html">Ruby Classes</a></li>
+         <li><a href="t6-oop-concepts.html">Blocks, Procs, And Lambdas</a></li>
+         <li><a href="t7-JavaScript.html">Loops: Ruby vs JavaScript</a></li>
+         <li><a href="t8-tech.html">SQL Injection</a></li>
+        </ul>
+        <h3>Cultural Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+          <li><a href="c1-chefs-kitchen.html">Fireside Chat with Shereef: Kitchen vs Table</a></li>
+          <li><a href="c3-thinking-style.html">Thinking Style</a></li>
+          <li><a href="c4-tech-issues.html">Tech Industry: Diversity Is A Problem</a></li>
+          <li><a href="c5-feedback.html">Feedback</a></li>
+          <li><a href="c6-stereotype-threat.html">Stereotype Threat</a></li>
+          <li><a href="c7-values.html">Exploring My Values</a></li>
+          <li><a href="c8-conflict.html">Conflict</a></li>
+        </ul>
+      </section>
+      <footer>
+         <a href="http://twitter.com/fdel15"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/frank.delpidio"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <a href="https://github.com/fdel15"><img src="../img/github-logo.svg"/ alt="Github Logo" class="social-icon"></a>
+        <a href="https://www.linkedin.com/profile/view?id=296975658&trk=nav_responsive_tab_profile"><img src="../img/social_linkedin.png"/ alt="Linked-In Logo" class="social-icon"></a>
+        <a href="http://www.quora.com/Frank-DelPidio"><img src="../img/quora-logo.png"/ alt="Quora Logo" class="social-icon"></a>
+        <p>&copy; 2014 Frank DelPidio.</p>
+      </footer>
+      </div>
+  </body>
+</html>

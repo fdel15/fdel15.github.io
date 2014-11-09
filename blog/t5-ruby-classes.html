@@ -1,101 +1,171 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-    <link type="text/css" rel="stylesheet" href="../stylesheets/blog-stylesheet.css" />
-    </head>
-    <title>Classes</title>
-    <body>
-    <h3>Ruby Classes</h3>
-    <div id="content">
-      <p>Classes are very useful objects in Ruby. Defining a class is a way to organize objects and methods into convenient bundles. Classes can be described as the blueprints for object creation. Every object in Ruby is the construct of some class. The goal of this blog post is to try to explain when, why, and how to implement classes in Ruby by creating an example class.
-        <br><br>
-    The first question we need to answer is when do we want to create a class? To answer that question, let’s look at why we like to use classes. Classes allow you to quickly create many objects that behave essentially the same way. Every object created by the class will have access to instant methods and instant variables .
-<br><br>
-    Let’s assume you want to create a program all about dogs. Every dog has a name, an age, and can bark. But not every dog has the same age or name, and some dogs may even being trained to do tricks. Making a class called Dogs makes sense here.
-    <br><br>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Frank DelPidio | Web Developer</title>
+    <link rel="stylesheet" href="../css/normalize.css" >
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <h1>Frank DelPidio</h1>
+        <h2>Web Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="blog/index.html" class="selected">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section id="primary">
+        <h3>Ruby Classes</h3> <!--Title Of Blog Post -->
 
-    You define a class with the keyword “class”. Classes are named with constants which means they begin with a capital letter. Our class name is going to be dogs.
-    <br><br>
+        <p class="date">October 20th, 2014</p> <!--Date -->
 
-class Dogs<br>
-end<br><br>
+        <p>Classes are very useful objects in Ruby. Defining a class is a way to organize objects and methods into convenient bundles. Classes can be described as the blueprints for object creation. Every object in Ruby is the construct of some class. The goal of this blog post is to try to explain when, why, and how to implement classes in Ruby by creating an example class.</p>
 
-We have created our class Dogs, only it doesn’t do anything! It is time to start adding some methods to our class. <br><br>
+        <p>The first question we need to answer is when do we want to create a class? To answer that question, let’s look at why we like to use classes. Classes allow you to quickly create many objects that behave essentially the same way. Every object created by the class will have access to instant methods and instant variables.</p>
 
-The first and most important method we want to add to our class is the initialize method. The initialize method is a special method in ruby programs. This method is automatically run every time a new instance of the class is created. It tells the object to set its internal state up according to the parameters requested. Going back to our dog example, the two things we want to know about each dog before it is created are its name and age. <br><br>
+        <p>Let’s assume you want to create a program all about dogs. Every dog has a name, an age, and can bark. But not every dog has the same age or name, and some dogs may even being trained to do tricks. Making a class called Dogs makes sense here.</p>
 
-class Dogs<br>
-    def initialize(name, age)<br>
-        @name = name<br>
-        @age = age<br>
-    end<br>
-end<br><br>
+        <p>You define a class with the keyword “class”. Classes are named with constants which means they begin with a capital letter. Our class name is going to be dogs.</p>
 
-What the heck is going on in the inside of the method? The @ sign signifies that a special kind of variable in Ruby called an instant variable. What makes instant variables special is that they can be referenced from anywhere inside our class object. The parameters we are given are turned into instance variables. <br><br>
+        <p class="code-example">
+        class Dogs<br>
+        end</p>
+
+        <p>We have created our class Dogs, only it doesn’t do anything! It is time to start adding some methods to our class.</p>
+
+        <p>The first and most important method we want to add to our class is the initialize method. The initialize method is a special method in ruby programs. This method is automatically run every time a new instance of the class is created. It tells the object to set its internal state up according to the parameters requested. Going back to our dog example, the two things we want to know about each dog before it is created are its name and age.</p>
+
+        <ul class="code-example">
+          <li>class Dogs</li>
+            <div class="method">
+              <li>def initialize(name, age)</li>
+              <li class="method-def">@name = name</li>
+              <li class="method-def">@age = age</li>
+              <li>end</li>
+            </div>
+          <li>end</li>
+        </ul>
+
+        <p>What the heck is going on in the inside of the method? The @ sign signifies that a special kind of variable in Ruby called an instant variable. What makes instant variables special is that they can be referenced from anywhere inside our class object. The parameters we are given are turned into instance variables.</p>
+
+        <p>To create a new instance of a dog you would need to call the new method on the Dog class and provide the information for the parameters.</p>
+
+        <p class="code-example">Dog.new(“Bigsby”, “1”)</p>
+
+        <p>This class is not very useful because it does not return anything to the screen. What if you want to print the name of the dog or your dog has a birthday?</p>
+
+        <ul class="code-example">
+          <li>class Dogs</li>
+          <li class="attr">attr_accessor :name, :age</li>
+          <div class="method">
+            <li>def initialize(name, age)</li>
+                <li class="method-def">@name = name</li>
+                <li class="method-def">@age = age </li>
+            <li>end</li>
+          </div>
+          <li>end</li>
+        </ul>
+
+        <p>Introducing attr_accessor. Attr_accessor is a Ruby shortcut that creates a setter and getter method for :name and :age. We can now return our dogs name and age as well as change them if we want. This allows us to do things like this:</p>
 
 
-To create a new instance of a dog you would need to call the new method on the Dog class and provide the information for the parameters. <br><br>
 
-Dog.new(“Bigsby”, “1”)<br><br>
+        <ul class="code-example">
+          <li><p>my_dog = Dog.new(“Bigsby”, “1”)</p></li>
+          <li>my_dog.name == “Bigsby”</li>
+          <li>my_dog.age == 1</li>
+          <li class="comment">#Your dog had a birthday!!</li>
+          <li><p>my_dog.age = 2 </p><li>
+          <li>my_dog.age == 2 </li>
+        </ul>
 
-This class is not very useful because it does not return anything to the screen. What if you want to print the name of the dog or your dog has a birthday?
-<br><br>
-class Dogs <br>
-  attr_accessor :name, :age <br>
-    def initialize(name, age) <br>
-        @name = name <br>
-        @age = age <br>
-    end <br>
-end <br><br>
+        <p>Now let’s add some methods to our class! We want all our dogs to be able to bark, and some of our dogs know how to sit.  We are going to create instant methods which are going to be available to all instances of the class that are created.</p>
 
-Introducing attr_accessor. Attr_accessor is a Ruby shortcut that creates a setter and getter method for :name and :age. We can now return our dogs name and age as well as change them if we want. This allows us to do things like this: <br><br>
+        <ul class="code-example">
+          <li>class Dogs</li>
+          <li class="attr">attr_accessor :name, :age</li>
+          <div class="method">
+            <li>def initialize(name, age)</li>
+                <li class="method-def">@name = name</li>
+                <li class="method-def">@age = age </li>
+            <li>end</li>
+          </div>
 
-my_dog = Dog.new(“Bigsby”, “1”) <br><br>
+          <div class="method">
+            <li>def bark</li>
+              <li class="method-def">puts “Ruff! Ruff!”</li>
+            <li>end</li>
+          </div>
 
-my_dog.name == “Bigsby” <br>
-my_dog.age == 1 <br><br>
+          <div class="method">
+            <li>def sit</li>
+              <li class="method-def">if @age > 1
+                <li class="conditional">puts “#{@name} sits and wags his tail! Good boy!”</li>
+              <li class="method-def">else</li>
+                <li class="conditional">: puts “#{@name} bites you in the ankle! Bad dog!”</li>
+              <li class="method-def">end</li>
+            <li>end<li>
+          </div>
+          <li>end</li>
+        </ul>
 
-#Your dog had a birthday!!<br><br>
+        <p>All of the dogs we create now can bark, however only dogs who are older than 1 years old will have learned how to sit. Notice how we use the instant variables defined in the initialize method in our instant method.</p>
 
-my_dog.name = 2 <br><br>
+        <ul class="code-example">
+          <li><p>my_dog = Dog.new(“Bigsby”, 1)</p></li>
+          <li>my_dog.name == “Bigsby”</li>
+          <li>my_dog.age == 1</li>
+          <li>my_dog.bark == “Ruff! Ruff!”</li>
+          <li>my_dog.sit == “Bigsby bites you in the ankle! Bad dog!”</li>
+          <li>my_dog.age = 2</li>
+          <li>my_dog.sit == “Bigsby sits and wags his tail! Good boy!”</li>
+        </ul>
 
-my_dog.name == 2 <br><br>
 
-Now let’s add some methods to our class! We want all our dogs to be able to bark, and some of our dogs know how to sit.  We are going to create instant methods which are going to be available to all instances of the class that are created. <br><br>
-
-class Dogs <br>
-  attr_accessor :name, :age <br>
-    def initialize(name, age) <br>
-        @name = name <br>
-        @age = age <br>
-    end<br><br>
-
-    def bark<br>
-    puts “Ruff! Ruff!” <br>
-    end<br><br>
-
-    def sit<br>
-    @age > 1 ? puts “#{@name} sits and wags his tail! Good boy!” : puts “#{@name} bites you in the ankle! Bad dog!”<br>
-    end<br>
-end<br><br>
-
-All of the dogs we create now can bark, however only dogs who are older than 1 years old will have learned how to sit. Notice how we use the instant variables defined in the initialize method in our instant method. <br><br>
-
-These are just the very basics of the Classes in Ruby. Hopefully after reading through this blog post the following code below makes sense to you! Thanks for reading! <br><br>
-
-my_dog = Dog.new(“Bigsby”, 1)<br><br>
-
-my_dog.name == “Bigsby” <br>
-my_dog.age == 1 <br>
-my_dog.bark == “Ruff! Ruff!” <br>
-my_dog.sit == “Bigsby bites you in the ankle! Bad dog!” <br>
-my_dog.age = 2 <br>
-my_dog.sit == “Bigsby sits and wags his tail! Good boy!” <br>
-
-    </p> <!-- blog post goes here -->
-    </div>
-    <div id="created">
-    <p>Frank DelPidio 10/20/2014</p> <!--Author and date posted -->
-    </div>
-    </body>
-  </html>
+        <p>These are just the very basics of the Classes in Ruby. Hopefully after reading through this blog post the following code below makes sense to you! Thanks for reading!</p> <!--Blog Post Content -->
+      </section>
+      <section id="secondary">
+        <h3>Technical Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+         <li><a href="t1-git-blog.html">Version Control, Git, and GitHub</a></li>
+         <li><a href="t2-css-design.html">ID's, Classes, And Best Practices</a></li>
+         <li><a href="t3-arrays-hashes.html">Arrays And Hashes</a></li>
+         <li><a href="t4-enumberable-methods.html">Enumerable Methods</a></li>
+         <li><a href="t5-ruby-classes.html">Ruby Classes</a></li>
+         <li><a href="t6-oop-concepts.html">Blocks, Procs, And Lambdas</a></li>
+         <li><a href="t7-JavaScript.html">Loops: Ruby vs JavaScript</a></li>
+         <li><a href="t8-tech.html">SQL Injection</a></li>
+        </ul>
+        <h3>Cultural Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+          <li><a href="c1-chefs-kitchen.html">Fireside Chat with Shereef: Kitchen vs Table</a></li>
+          <li><a href="c3-thinking-style.html">Thinking Style</a></li>
+          <li><a href="c4-tech-issues.html">Tech Industry: Diversity Is A Problem</a></li>
+          <li><a href="c5-feedback.html">Feedback</a></li>
+          <li><a href="c6-stereotype-threat.html">Stereotype Threat</a></li>
+          <li><a href="c7-values.html">Exploring My Values</a></li>
+          <li><a href="c8-conflict.html">Conflict</a></li>
+        </ul>
+      </section>
+      <footer>
+         <a href="http://twitter.com/fdel15"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/frank.delpidio"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <a href="https://github.com/fdel15"><img src="../img/github-logo.svg"/ alt="Github Logo" class="social-icon"></a>
+        <a href="https://www.linkedin.com/profile/view?id=296975658&trk=nav_responsive_tab_profile"><img src="../img/social_linkedin.png"/ alt="Linked-In Logo" class="social-icon"></a>
+        <a href="http://www.quora.com/Frank-DelPidio"><img src="../img/quora-logo.png"/ alt="Quora Logo" class="social-icon"></a>
+        <p>&copy; 2014 Frank DelPidio.</p>
+      </footer>
+      </div>
+  </body>
+</html>

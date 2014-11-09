@@ -1,41 +1,92 @@
-
 <!DOCTYPE html>
-  <html>
-    <head>
-    <link type="text/css" rel="stylesheet" href="../stylesheets/blog-stylesheet.css" />
-    </head>
-    <title>Enumerable Methods</title>
-    <body>
-    <h3>Enumerable#group_by</h3>
-    <div id="content">
-      <p>
-For this blog post I want to take a little bit closer look at the group_by method in Ruby. <br><br>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Frank DelPidio | Web Developer</title>
+    <link rel="stylesheet" href="../css/normalize.css" >
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <h1>Frank DelPidio</h1>
+        <h2>Web Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="blog/index.html" class="selected">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section id="primary">
+        <h3>Enumerable Methods</h3> <!--Title Of Blog Post -->
 
-In simplest terms, the group_by method breaks a collection into groups based on some given criteria. It expects to accept a bock that contains the criteria by which the items in the collection will be grouped. If no block is given, an enumerator is returned instead.
-<br><br>
+        <p class="date">October 12th, 2014</p> <!--Date -->
 
-It returns a hash where each key represents a group. Each key’s corresponding value is an array containing the members of that group.
-<br><br>
-When called on an array, the group_by method loops through the array and creates a new hash specifying keys and values according to the block that is passed.
-<br><br>
-Let’s walk through the example found in the Ruby documentation: </p><br>
- <img src="../imgs/group_by_ex.png"/><br>
-<p>
-The example takes a range of numbers, 1 through 6, as its input. The group_by method iterates through each number in the range and calculates mod 3 for each number in the range. Mod returns the remainder. When you divide by 3, there are only 3 possible outcomes for the mod. They are 0, 1, and 2.
-<br><br>
-group_by creates a new hash with each possible outcome as a key. The numbers are then grouped together by their remainder after being divided by 3.
-<br><br>
-The group_by method is a great way to iterate through a list (or array) and create an easy way to access the data stored in that list. Let’s look at one more example that iterates through a list and sorts the data by alphabetical order.</p>
-<img src="../imgs/bird_code_ex.png"/><br>
-<p>
-The group_by method iterates through the elements in the birds array. For each element, it looks at the first letter and then creates a key value pair for that element, or stores it in an existing key-value pair if one has already been created.
-<br><br>
-The two examples given are pretty simple to try and illustrate how the group_by method works. Hopefully, you can see the power and usefulness for this method when you start working with bigger more complex data sets.
-<br><br>
-Thanks for reading. </p> <!-- blog post goes here -->
-    </div>
-    <div id="created">
-    <p>Frank DelPidio 10/12/2014</p> <!--Author and date posted -->
-    </div>
-    </body>
-  </html>
+        <p>For this blog post I want to take a little bit closer look at the group_by method in Ruby.</p>
+
+        <p>In simplest terms, the group_by method breaks a collection into groups based on some given criteria. It expects to accept a bock that contains the criteria by which the items in the collection will be grouped. If no block is given, an enumerator is returned instead.</p>
+
+        <p>It returns a hash where each key represents a group. Each key’s corresponding value is an array containing the members of that group.</p>
+
+        <p>When called on an array, the group_by method loops through the array and creates a new hash specifying keys and values according to the block that is passed.</p>
+
+        <p>Let’s walk through the example found in the Ruby documentation: </p>
+
+        <img src="../imgs/group_by_ex.png"/>
+
+        <p>The example takes a range of numbers, 1 through 6, as its input. The group_by method iterates through each number in the range and calculates mod 3 for each number in the range. Mod returns the remainder. When you divide by 3, there are only 3 possible outcomes for the mod. They are 0, 1, and 2.</p>
+
+        <p>group_by creates a new hash with each possible outcome as a key. The numbers are then grouped together by their remainder after being divided by 3.</p>
+
+        <p>The group_by method is a great way to iterate through a list (or array) and create an easy way to access the data stored in that list. Let’s look at one more example that iterates through a list and sorts the data by alphabetical order.</p>
+
+        <img src="../imgs/bird_code_ex.png"/>
+
+        <p>The group_by method iterates through the elements in the birds array. For each element, it looks at the first letter and then creates a key value pair for that element, or stores it in an existing key-value pair if one has already been created.</p>
+
+        <p>The two examples given are pretty simple to try and illustrate how the group_by method works. Hopefully, you can see the power and usefulness for this method when you start working with bigger more complex data sets.</p>
+
+        <p>Thanks for reading.</p><!--Blog Post Content -->
+      </section>
+      <section id="secondary">
+        <h3>Technical Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+         <li><a href="t1-git-blog.html">Version Control, Git, and GitHub</a></li>
+         <li><a href="t2-css-design.html">ID's, Classes, And Best Practices</a></li>
+         <li><a href="t3-arrays-hashes.html">Arrays And Hashes</a></li>
+         <li><a href="t4-enumberable-methods.html">Enumerable Methods</a></li>
+         <li><a href="t5-ruby-classes.html">Ruby Classes</a></li>
+         <li><a href="t6-oop-concepts.html">Blocks, Procs, And Lambdas</a></li>
+         <li><a href="t7-JavaScript.html">Loops: Ruby vs JavaScript</a></li>
+         <li><a href="t8-tech.html">SQL Injection</a></li>
+        </ul>
+        <h3>Cultural Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+          <li><a href="c1-chefs-kitchen.html">Fireside Chat with Shereef: Kitchen vs Table</a></li>
+          <li><a href="c3-thinking-style.html">Thinking Style</a></li>
+          <li><a href="c4-tech-issues.html">Tech Industry: Diversity Is A Problem</a></li>
+          <li><a href="c5-feedback.html">Feedback</a></li>
+          <li><a href="c6-stereotype-threat.html">Stereotype Threat</a></li>
+          <li><a href="c7-values.html">Exploring My Values</a></li>
+          <li><a href="c8-conflict.html">Conflict</a></li>
+        </ul>
+      </section>
+      <footer>
+         <a href="http://twitter.com/fdel15"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/frank.delpidio"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <a href="https://github.com/fdel15"><img src="../img/github-logo.svg"/ alt="Github Logo" class="social-icon"></a>
+        <a href="https://www.linkedin.com/profile/view?id=296975658&trk=nav_responsive_tab_profile"><img src="../img/social_linkedin.png"/ alt="Linked-In Logo" class="social-icon"></a>
+        <a href="http://www.quora.com/Frank-DelPidio"><img src="../img/quora-logo.png"/ alt="Quora Logo" class="social-icon"></a>
+        <p>&copy; 2014 Frank DelPidio.</p>
+      </footer>
+      </div>
+  </body>
+</html>

@@ -25,6 +25,10 @@ h3 {
  margin: 0 0 1em 0;
 }
 
+ul {
+  list-style: none;
+}
+
 
 /****************************
 HEADING
@@ -49,7 +53,7 @@ h1 {
  margin: 15px 0px;
  font-size: 1.75em;
  font-weight: normal;
-  line-height: 0.8em;
+ line-height: 0.8em;
 }
 
 h2 {
@@ -70,7 +74,6 @@ nav {
 }
 
 nav ul {
- list-style: none;
  margin: 0 10px;
  padding: 0;
 }
@@ -146,7 +149,6 @@ PAGE: CONTACT
 ****************************/
 
 .contact-info {
- list-style: none;
  padding: 0;
  margin: 0;
  font-size: 0.9em;
@@ -179,7 +181,6 @@ PAGE: BLOG
 ****************************/
 
 .blog-post-sidebar {
-  list-style: none;
   padding: 0 0 1em 0;
   margin: 0;
 }
@@ -190,6 +191,57 @@ PAGE: BLOG
 
 #culture-heading {
   margin: 5px 0;
+}
+
+/****************************
+CODE EXAMPLES
+****************************/
+
+.code-example {
+  font-style: Arial, sans-serif;
+  font-size: 1.15em;
+  border-radius: 10px;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.hash-body{
+  padding-left: 10px;
+}
+
+.code-example li p {
+  line-height: 25%;
+}
+
+.attr {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.method {
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.method-def {
+  padding-left: 10px;
+}
+
+.comment {
+  margin: 10px 0;
+}
+
+.conditional {
+  padding-left: 20px;
+}
+
+.proc {
+  padding-bottom: 20px;
+}
+
+.output{
+  padding: 15px 0 0 0;
 }
 
 
@@ -232,4 +284,21 @@ nav a, nav a:visited {
 /* selected nav link */
 nav a.selected, nav a:hover {
  color: #32673f;
+}
+
+.code-example {
+  background: #4E5052;
+  color: #AAD2CB;
+}
+
+.comment, .output{
+  color: #6DD254;
+}
+
+.lambda {
+  color: #BDC5FF;
+}
+
+.proc {
+  color: #D9FF4D;
 }
