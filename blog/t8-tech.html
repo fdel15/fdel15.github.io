@@ -1,45 +1,100 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-    <link type="text/css" rel="stylesheet" href="../stylesheets/blog-stylesheet.css" />
-    </head>
-    <title></title>
-    <body>
-    <h3>SQL Injection</h3>
-    <div id="content">
-      <p>A couple of weeks ago I was watching the documentary “Hackers Wanted” and remember being particularly blown away by one of the hackers they profiled. His name is Adrian Lamo. In 2003 he was arrested for hacking big well known companies such as Yahoo, AOL Time Warner, Microsoft, and the New York Times.<br><br>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Frank DelPidio | Web Developer</title>
+    <link rel="stylesheet" href="../css/normalize.css" >
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <h1>Frank DelPidio</h1>
+        <h2>Web Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="blog/index.html" class="selected">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section id="primary">
+        <h3>SQL Injection</h3> <!--Title Of Blog Post -->
 
-There were two things that really fascinated me about Adrian. He never maliciously hacked any of the sites he visited. He simply has an insatiable curiosity for how things work and enjoys exploiting security breaches when he finds them and then telling the companies that they need to fix these breaches. The more amazing thing is how he hacked these sites. I always thought that hacking required super sophisticated algorithms and top of the line hardware, but Adrian, also known as “the homeless hacker”, would go to a local Kinkos and hack the site by simply clicking around and finding security holes. <br><br>
+        <p class="date">November 4th, 2014</p> <!--Date -->
 
-I now realize he was probably using a technique called SQL injection. SQL injection is a code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker).  I am new to SQL, but I am going to do my best to explain how SQL injection works in an extremely non-technical kind of way. <br><br>
+        <p>A couple of weeks ago I was watching the documentary “Hackers Wanted” and remember being particularly blown away by one of the hackers they profiled. His name is Adrian Lamo. In 2003 he was arrested for hacking big well known companies such as Yahoo, AOL Time Warner, Microsoft, and the New York Times.</p>
 
-SQL injection was first discussed publicly in 1998. In a 2012 study, security company Imperva reported that the average web application received 4 attack campaigns per month. In 2013 SQL injection was rated the number one attack on the OWASP (Open Web Application Security Project) top 10. <br><br>
+        <p>There were two things that really fascinated me about Adrian. He never maliciously hacked any of the sites he visited. He simply has an insatiable curiosity for how things work and enjoys exploiting security breaches when he finds them and then telling the companies that they need to fix these breaches. The more amazing thing is how he hacked these sites. I always thought that hacking required super sophisticated algorithms and top of the line hardware, but Adrian, also known as “the homeless hacker”, would go to a local Kinkos and hack the site by simply clicking around and finding security holes.</p>
 
-SQL is a database language that can be used to display data on a web page. Since SQL statements are text only, it is easy to write a little bit of computer code to dynamically change SQL statements to provide the user with selected data. This data can include sensitive information such as passwords and credit card numbers. <br><br>
+        <p>I now realize he was probably using a technique called SQL injection. SQL injection is a code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker).  I am new to SQL, but I am going to do my best to explain how SQL injection works in an extremely non-technical kind of way.</p>
 
-There are several different ways SQLI can be executed, but I am going to try my best to explain one of the easier to understand cases which is SQL Injection Based on 1=1 is Always true. First let’s discuss what we know about SQL. SQL stores its data in tables, and each table has an id column that gives each instance a unique primary key value. If a hacker can access these id values they can gain access to the entire table. <br><br>
+        <p>SQL injection was first discussed publicly in 1998. In a 2012 study, security company Imperva reported that the average web application received 4 attack campaigns per month. In 2013 SQL injection was rated the number one attack on the OWASP (Open Web Application Security Project) top 10.</p>
 
-The following example is from <a href="http://www.w3schools.com/sql/sql_injection.asp">W3Schools</a>: <br><br>
+        <p>SQL is a database language that can be used to display data on a web page. Since SQL statements are text only, it is easy to write a little bit of computer code to dynamically change SQL statements to provide the user with selected data. This data can include sensitive information such as passwords and credit card numbers.</p>
 
-<img src="../imgs/SQLI_example.png"/> <br><br>
+        <p>There are several different ways SQLI can be executed, but I am going to try my best to explain one of the easier to understand cases which is SQL Injection Based on 1=1 is Always true. First let’s discuss what we know about SQL. SQL stores its data in tables, and each table has an id column that gives each instance a unique primary key value. If a hacker can access these id values they can gain access to the entire table.</p>
 
-Lets break down the SQL code here: <br><br>
+        <p>The following example is from <a href="http://www.w3schools.com/sql/sql_injection.asp">W3Schools</a>:</p>
 
-SELECT  * -- select all files <br><br>
-FROM Users -- from the database table named Users <br><br>
-WHERE UserId = 105 or 1=1 -- return all instances of column UserId has a value of 105 or 1=1 <br><br>
+        <img src="../imgs/SQLI_example.png"/> <br><br>
 
-Since 1=1 is always true, this will return all rows from the table Users. If the table has other columns of information such as Password or credit card number, this information would be included in the rows that are returned. <br><br>
+        <p>Lets break down the SQL code here:</p>
 
-The only proven way to protect a website from SQL injection attacks is to use SQL parameters. These are values that are added to an SQL query at execution time, in a controlled manner. The SQL engine checks each parameter to ensure that it is correct for its column and are treated literally, and not as part of the SQL to be executed. Here is another example from <a href="http://www.w3schools.com/sql/sql_injection.asp">W3Schools</a>: <br><br>
+        <ul class="code-example">
+          <li>SELECT  <span class="output">* -- select all files </span><li>
+          <li>FROM Users <span class="output">-- from the database table named Users</span><li>
+          <li>WHERE UserId = 105 or 1=1 <span class="output">-- return all instances of column UserId that have a value of 105 or 1=1</span><li>
+        </ul>
 
-<img src="../imgs/SQL_parameters.png"/> <br><br>
+        <p>Since 1=1 is always true, this will return all rows from the table Users. If the table has other columns of information such as Password or credit card number, this information would be included in the rows that are returned.</p>
 
+        <p>The only proven way to protect a website from SQL injection attacks is to use SQL parameters. These are values that are added to an SQL query at execution time, in a controlled manner. The SQL engine checks each parameter to ensure that it is correct for its column and are treated literally, and not as part of the SQL to be executed. Here is another example from <a href="http://www.w3schools.com/sql/sql_injection.asp">W3Schools</a>:</p>
 
-That covers the very basics of one of the top website vulnerabilities and how to avoid it. Hopefully this blog post has sparked some curiosity in SQL and SQL injection, and you continue to explore this rather complicated topic.<br><br>  Thanks for reading. </p> <!-- blog post goes here -->
-    </div>
-    <div id="created">
-    <p>Frank DelPidio 11/04/2014</p> <!--Author and date posted -->
-    </div>
-    </body>
-  </html>
+        <img src="../imgs/SQL_parameters.png"/> <br><br>
+
+        <p>That covers the very basics of one of the top website vulnerabilities and how to avoid it. Hopefully this blog post has sparked some curiosity in SQL and SQL injection, and you continue to explore this rather complicated topic.</p>
+
+        <p>Thanks for reading.</p><!--Blog Post Content -->
+      </section>
+      <section id="secondary">
+        <h3>Technical Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+         <li><a href="t1-git-blog.html">Version Control, Git, and GitHub</a></li>
+         <li><a href="t2-css-design.html">ID's, Classes, And Best Practices</a></li>
+         <li><a href="t3-arrays-hashes.html">Arrays And Hashes</a></li>
+        <li><a href="t4-enumerable-methods.html">Enumerable Methods</a></li>
+        <li><a href="t5-ruby-classes.html">Ruby Classes</a></li>
+         <li><a href="t6-oop-concepts.html">Blocks, Procs, And Lambdas</a></li>
+         <li><a href="t7-JavaScript.html">Loops: Ruby vs JavaScript</a></li>
+         <li><a href="t8-tech.html">SQL Injection</a></li>
+        </ul>
+        <h3>Cultural Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+          <li><a href="c1-chefs-kitchen.html">Fireside Chat with Shereef: Kitchen vs Table</a></li>
+          <li><a href="c3-thinking-style.html">Thinking Style</a></li>
+          <li><a href="c4-tech-issues.html">Tech Industry: Diversity Is A Problem</a></li>
+          <li><a href="c5-feedback.html">Feedback</a></li>
+          <li><a href="c6-stereotype-threat.html">Stereotype Threat</a></li>
+          <li><a href="c7-values.html">Exploring My Values</a></li>
+          <li><a href="c8-conflict.html">Conflict</a></li>
+        </ul>
+      </section>
+      <footer>
+         <a href="http://twitter.com/fdel15"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/frank.delpidio"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <a href="https://github.com/fdel15"><img src="../img/github-logo.svg"/ alt="Github Logo" class="social-icon"></a>
+        <a href="https://www.linkedin.com/profile/view?id=296975658&trk=nav_responsive_tab_profile"><img src="../img/social_linkedin.png"/ alt="Linked-In Logo" class="social-icon"></a>
+        <a href="http://www.quora.com/Frank-DelPidio"><img src="../img/quora-logo.png"/ alt="Quora Logo" class="social-icon"></a>
+        <p>&copy; 2014 Frank DelPidio.</p>
+      </footer>
+      </div>
+  </body>
+</html>
