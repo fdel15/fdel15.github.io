@@ -1,34 +1,85 @@
-
 <!DOCTYPE html>
-  <html>
-    <head>
-    <link type="text/css" rel="stylesheet" href="../stylesheets/blog-stylesheet.css" />
-    </head>
-    <title></title>
-    <body>
-    <h3>Tech Industry: Diversity Is A Problem</h3>
-    <div id="content">
-      <p>One of the big problems facing the Tech Industry today is the lack of diversity in the work force. The stereotypes say that Silicon Valley (and the tech industry as a whole is made up entirely of white males. Unfortunately, the data supports this stereotype.
-<br><br>
-Google recently released a break down of its 46,000 member global work force: 61% of their workforce is white, and only 30% are women. The numbers look even worse when you focus on their technical staffers, in which a whopping 83% are male.
-<br><br>
-Twitter also recently released a report with very similar finding in their own company:</p><br>
-<img src="../imgs/Twitter_diversity.png"/><br>
-</p>
-Why is this a problem? To put it simply, because diversity is important. Different experiences and value systems help counter group thinking. Research shows that diverse groups are more creative and effective in solving problems. As Google puts it: “Having a diversity of perspectives leads to better decision-making, more relevant products, and makes work a whole lot more interesting.”
-<br><br>
-To their credit, Google has been trying to correct this problem for several years now. They have been running a series of workshops aimed at making Google’s culture more accepting of diversity. They also sponsor a series of programs aimed at trying to get more women into tech and they have also scrutinized their hiring practices to make sure they aren’t being bias against women or specific ethnicities.
-<br><br>
-The only problem is that they have no proof if any of these solutions are working. While I believe their efforts are having a positive impact on the tech industry as a whole, I think the problem is much deeper.
-<br><br>
-Learning how to code needs to become a fundamental part of our education system, right up there with English and Math. By exposing children to the tech industry at an early age, we may be able to spark an interest that will shape their career choices.
-<br><br>
-I also believe we to find the best female coder currently in the world and make her a celebrity. If even a fraction of the young girls who obsess over and inspire to be the next Kardashian could get that excited over a celebrity that actually adds value to the world, we could make a radical change in the tech industry. This will not happen until entering the tech industry is seen culturally as cool and exciting instead of geeky and weird. The right person made into a celebrity, could be the face of this change and illustrating the limitless possibilities and excitement the tech industry has to offer.
-<br><br>
-Thanks for reading.</p> <!-- blog post goes here -->
-    </div>
-    <div id="created">
-    <p>Frank DelPidio 10/12/2014</p> <!--Author and date posted -->
-    </div>
-    </body>
-  </html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Frank DelPidio | Web Developer</title>
+    <link rel="stylesheet" href="../css/normalize.css" >
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <h1>Frank DelPidio</h1>
+        <h2>Web Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="blog/index.html" class="selected">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section id="primary">
+        <h3>Tech Industry: Diversity Is A Problem</h3>  <!--Title Of Blog Post -->
+
+        <p class="date">October 12th, 2014</p> <!--Date -->
+
+        <p>One of the big problems facing the Tech Industry today is the lack of diversity in the work force. The stereotypes say that Silicon Valley (and the tech industry as a whole is made up entirely of white males. Unfortunately, the data supports this stereotype.</p>
+
+        <p>Google recently released a break down of its 46,000 member global work force: 61% of their workforce is white, and only 30% are women. The numbers look even worse when you focus on their technical staffers, in which a whopping 83% are male.</p>
+
+        <p>Twitter also recently released a report with very similar finding in their own company:</p>
+        <img src="../imgs/Twitter_diversity.png"/>
+        </p>
+        Why is this a problem? To put it simply, because diversity is important. Different experiences and value systems help counter group thinking. Research shows that diverse groups are more creative and effective in solving problems. As Google puts it: “Having a diversity of perspectives leads to better decision-making, more relevant products, and makes work a whole lot more interesting.”</p>
+
+        <p>To their credit, Google has been trying to correct this problem for several years now. They have been running a series of workshops aimed at making Google’s culture more accepting of diversity. They also sponsor a series of programs aimed at trying to get more women into tech and they have also scrutinized their hiring practices to make sure they aren’t being bias against women or specific ethnicities.</p>
+
+        <p>The only problem is that they have no proof if any of these solutions are working. While I believe their efforts are having a positive impact on the tech industry as a whole, I think the problem is much deeper.</p>
+
+        <p>Learning how to code needs to become a fundamental part of our education system, right up there with English and Math. By exposing children to the tech industry at an early age, we may be able to spark an interest that will shape their career choices.</p>
+
+        <p>I also believe we to find the best female coder currently in the world and make her a celebrity. If even a fraction of the young girls who obsess over and inspire to be the next Kardashian could get that excited over a celebrity that actually adds value to the world, we could make a radical change in the tech industry. This will not happen until entering the tech industry is seen culturally as cool and exciting instead of geeky and weird. The right person made into a celebrity, could be the face of this change and illustrating the limitless possibilities and excitement the tech industry has to offer.</p>
+
+        <p>Thanks for reading.</p>  <!--Blog Post Content -->
+      </section>
+      <section id="secondary">
+        <h3>Technical Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+         <li><a href="t1-git-blog.html">Version Control, Git, and GitHub</a></li>
+         <li><a href="t2-css-design.html">ID's, Classes, And Best Practices</a></li>
+         <li><a href="t3-arrays-hashes.html">Arrays And Hashes</a></li>
+         <li><a href="t4-enumberable-methods.html">Enumerable Methods</a></li>
+         <li><a href="t5-ruby-classes.html">Ruby Classes</a></li>
+         <li><a href="t6-oop-concepts.html">Blocks, Procs, And Lambdas</a></li>
+         <li><a href="t7-JavaScript.html">Loops: Ruby vs JavaScript</a></li>
+         <li><a href="t8-tech.html">SQL Injection</a></li>
+        </ul>
+        <h3>Cultural Blog Posts</h3>
+        <ul class="blog-post-sidebar">
+          <li><a href="c1-chefs-kitchen.html">Fireside Chat with Shereef: Kitchen vs Table</a></li>
+          <li><a href="c3-thinking-style.html">Thinking Style</a></li>
+          <li><a href="c4-tech-issues.html">Tech Industry: Diversity Is A Problem</a></li>
+          <li><a href="c5-feedback.html">Feedback</a></li>
+          <li><a href="c6-stereotype-threat.html">Stereotype Threat</a></li>
+          <li><a href="c7-values.html">Exploring My Values</a></li>
+          <li><a href="c8-conflict.html">Conflict</a></li>
+        </ul>
+      </section>
+      <footer>
+         <a href="http://twitter.com/fdel15"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/frank.delpidio"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <a href="https://github.com/fdel15"><img src="../img/github-logo.svg"/ alt="Github Logo" class="social-icon"></a>
+        <a href="https://www.linkedin.com/profile/view?id=296975658&trk=nav_responsive_tab_profile"><img src="../img/social_linkedin.png"/ alt="Linked-In Logo" class="social-icon"></a>
+        <a href="http://www.quora.com/Frank-DelPidio"><img src="../img/quora-logo.png"/ alt="Quora Logo" class="social-icon"></a>
+        <p>&copy; 2014 Frank DelPidio.</p>
+      </footer>
+      </div>
+  </body>
+</html>

@@ -100,3 +100,65 @@ clear: both;
 #about_me_heading {
   text-align: center;
 }
+
+/***************************
+PAGE: CHEATSHEET
+****************************/
+
+ #js-cheatsheet {
+   background: url('http://www.artwallpaperhi.com/thumbnails/detail/20121020/abstract%20patterns%20backgrounds%20simple%201920x1080%20wallpaper_www.artwallpaperhi.com_89.jpg');
+   background-size: cover;
+   font-family: "Verdana";
+   color: white;
+   padding: 10px;
+  }
+
+  #js-link {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #000;
+    background-color: orange;
+    text-decoration: none;
+  }
+
+
+  h1, h2{
+    text-align: center;
+    margin: -2px;
+    font-family: ;
+    }
+
+  #left-column{
+    float: left;
+    width: 36%;
+    margin: 2.5%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #right-column{
+    float: right;
+    width: 36%;
+    margin: 2.5%;
+    border-radius: 5px;
+    padding: auto;
+}
+
+
+  li {
+    list-style: none;
+    padding: 0 10px;
+    width: 100%
+  }
+
+  .main {
+    font-weight: bold;
+    color: yellow;
+    padding: 10px;
+  }
+
+  #cheatsheet-partners {
+    text-align: center;
+    clear: both;
+    padding: 20px;
+  }
