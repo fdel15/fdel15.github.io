@@ -18,6 +18,11 @@
     font-size: 1.0em;
   }
 
+  .gps1-2 li {
+  float: left;
+  width: 45%;
+}
+
 
   /****************************
    PAGE: PORTFOLIO

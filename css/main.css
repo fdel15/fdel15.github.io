@@ -247,6 +247,56 @@ CODE EXAMPLES
 
 
 /****************************
+PAGE: GPS1-2
+****************************/
+
+.gps1-2 {
+  clear:both;
+  width: 100%;
+  margin: 0 5%;
+}
+
+.gps1-2 h3, h4 {
+  text-align: center;
+  line-height: 25%;
+  font-weight: bold;
+}
+
+.gps1-2 h3 {
+  font-size: 1.25em;
+}
+
+.gps1-2 h4 {
+  font-size: 1.05em;
+}
+
+.question {
+  width: 100%;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 10px 0;
+  margin-bottom: 0;
+}
+
+.gps1-2 ul{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.gps1-2 li {
+  float: left;
+  margin: 0;
+  padding: 10px 5% 0 0;
+}
+
+.gps1-2 img {
+  max-width: 100%;
+}
+
+
+
+/****************************
 PAGE: CHEATSHEET
 ****************************/
 
@@ -329,4 +379,8 @@ nav a.selected, nav a:hover {
 
 .proc {
   color: #D9FF4D;
+}
+
+.question{
+  color: #206F13;
 }
