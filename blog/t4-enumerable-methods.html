@@ -40,7 +40,8 @@
 
         <p>Let’s walk through the example found in the Ruby documentation: </p>
 
-        <img src="../img/group_by_ex.png"/>
+        <p class="code-example">(1..6).group_by {|i| i % 3}<br>
+          <span class="output">=> {0 => [3,6], 1 => [1,4], 2 => [2,5]}</span></p>
 
         <p>The example takes a range of numbers, 1 through 6, as its input. The group_by method iterates through each number in the range and calculates mod 3 for each number in the range. Mod returns the remainder. When you divide by 3, there are only 3 possible outcomes for the mod. They are 0, 1, and 2.</p>
 
