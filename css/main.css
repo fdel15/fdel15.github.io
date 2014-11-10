@@ -199,7 +199,7 @@ CODE EXAMPLES
 ****************************/
 
 .code-example {
-  font-style: Arial, sans-serif;
+  font-family: Monaco, courier;
   font-size: 1.15em;
   border-radius: 10px;
   margin: 0;
