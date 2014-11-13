@@ -319,7 +319,6 @@ PAGE: CHEATSHEET
 
 .main {
     font-weight: bold;
-    color: #198BEE;
     padding-top: 10px;
   }
 
@@ -332,7 +331,8 @@ COLORS
 /* site body */
 body {
  background-color: #fff;
- color: #999;
+ /*color: #999;*/
+ color: #666;
 }
 
 /* green header */
@@ -350,9 +350,14 @@ h1, h2{
  color: #fff;
 }
 
+h3 {
+  color:#198BEE;
+}
+
 /* colored links */
 a {
- color: #6ab47b;
+ /*color: #6ab47b;*/
+ color: #006E00;
 }
 
 
@@ -385,4 +390,8 @@ nav a.selected, nav a:hover {
 
 .question{
   color: #206F13;
+}
+
+.main {
+  color: #198BEE;
 }
