@@ -194,6 +194,20 @@ PAGE: BLOG
   margin: 5px 0;
 }
 
+.sub-heading {
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+.bullet-points {
+  list-style: circle;
+}
+
+.bullet-points li {
+  margin: 5px 0;
+}
+
+
 /****************************
 CODE EXAMPLES
 ****************************/
@@ -394,4 +408,8 @@ nav a.selected, nav a:hover {
 
 .main {
   color: #198BEE;
+}
+
+.sub-heading {
+  color: #333;
 }
