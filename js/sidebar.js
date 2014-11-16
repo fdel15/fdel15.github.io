@@ -9,7 +9,7 @@
          document.write('<li><a href="t7-JavaScript.html">Loops: Ruby vs JavaScript</a></li>');
          document.write('<li><a href="t8-tech.html">SQL Injection</a></li>');
          document.write('<li><a href="t9-new-site-design.html">New Site Design</a></li>');
-         document.write('<li><a href="t10-js-write-method.html">Making My Life Easier With JavaScript</a></li>');
+         document.write('<li><a href="t10-js-write-method.html">Making Life Easier With JavaScript</a></li>');
       document.write('</ul>');
 
 
