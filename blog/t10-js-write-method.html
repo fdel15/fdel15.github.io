@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Frank DelPidio | Web Developer</title>
+    <link rel="stylesheet" href="../css/normalize.css" >
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" id="logo">
+        <h1>Frank DelPidio</h1>
+        <h2>Web Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Portfolio</a></li>
+          <li><a href="home.html" class="selected">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section id="primary">
+        <h3>Making Life Easier With JavaScript</h3> <!--Title Of Blog Post -->
+
+        <p class="date">November 16th, 2014</p> <!--Date -->
+
+        <p>I recently redesigned my entire website to give it a cleaner and more professional look. You may notice that I like to keep a link to each one of my blog posts in a sidebar to the right of my blog posts (or at the bottom of the posts if you are reading this on a smaller screen device.) Up until today, I used to have to go into each one of my html files and manually change the sidebar every time I added a new blog post, but thanks to JavaScript, I will never have to do that again.</p>
+
+        <p>I am still new to JavaScript, but I have learned enough about how JavaScript works to know that there must be a better way for me to update this sidebar after each post. After a few Google searches I was able to find the method that i was looking for. Introducing:
+
+        <p class ="code-example">document.write()</p>
+
+        <p>This method does exactly what you would expect it to do. It writes HTML expressions or JavaScript code to the document. Now all I have to do is store my code for my blog post sidebar in it’s own separate JavaScript file. Every time I add a new post, I only have to update this one file. Here is what my sidebar.js file looks like: </p>
+
+        <a href="../img/sidebar-code.png"><img src="../img/sidebar-code.png"></a>
+
+        <p>I pretty much just copied and pasted my existing HTML file, wrapped each line in a document.write() method, and put it in quotation marks for JavaScript. Next, I went back and updated each of my pages and replaced my old HTML code for the sidebar with a script that executes my sidebar.js file:</p>
+
+        <a href="../img/sidebar-script.png"><img src="../img/sidebar-script.png"></a>
+
+        <p>I updated my blog-template so that each time I create a new post this script is automatically inserted where the old HTML use to go. Now every time I add a blog post to my page, I only have to update the sidebar.js file once, and all of my pages will be updated at the same time. This is going to make my life a million times easier. Thank you JavaScript!</p>
+
+        <p>And thank you for reading.</p>  <!--Blog Post Content -->
+      </section>
+      <section id="secondary">
+        <script language="JavaScript" type="text/javascript" src="../js/sidebar.js">
+        </script>
+      </section>
+      <footer>
+         <a href="http://twitter.com/fdel15"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/frank.delpidio"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <a href="https://github.com/fdel15"><img src="../img/github-logo.svg"/ alt="Github Logo" class="social-icon"></a>
+        <a href="https://www.linkedin.com/profile/view?id=296975658&trk=nav_responsive_tab_profile"><img src="../img/social_linkedin.png"/ alt="Linked-In Logo" class="social-icon"></a>
+        <a href="http://www.quora.com/Frank-DelPidio"><img src="../img/quora-logo.png"/ alt="Quora Logo" class="social-icon"></a>
+        <p>&copy; 2014 Frank DelPidio.</p>
+      </footer>
+      </div>
+  </body>
+</html>

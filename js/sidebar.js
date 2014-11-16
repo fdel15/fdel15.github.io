@@ -1,5 +1,5 @@
-document.write('<h3>Technical Blog Posts</h3>');
-        document.write('<ul class="blog-post-sidebar">');
+    document.write('<h3>Technical Blog Posts</h3>');
+      document.write('<ul class="blog-post-sidebar">');
          document.write('<li><a href="t1-git-blog.html">Version Control, Git, and GitHub</a></li>');
          document.write('<li><a href="t2-css-design.html">ID\'s, Classes, And Best Practices</a></li>');
          document.write('<li><a href="t3-arrays-hashes.html">Arrays And Hashes</a></li>');
@@ -9,7 +9,10 @@ document.write('<h3>Technical Blog Posts</h3>');
          document.write('<li><a href="t7-JavaScript.html">Loops: Ruby vs JavaScript</a></li>');
          document.write('<li><a href="t8-tech.html">SQL Injection</a></li>');
          document.write('<li><a href="t9-new-site-design.html">New Site Design</a></li>');
-        document.write('</ul>');
+         document.write('<li><a href="t10-js-write-method.html"Making My Life Easier With JavaScript');
+      document.write('</ul>');
+
+
         document.write('<h3>Cultural Blog Posts</h3>');
         document.write('<ul class="blog-post-sidebar">');
           document.write('<li><a href="c1-chefs-kitchen.html">Fireside Chat with Shereef: Kitchen vs Table</a></li>');
