@@ -25,4 +25,5 @@
           document.write('<li><a href="c7-values.html">Exploring My Values</a></li>');
           document.write('<li><a href="c8-conflict.html">Conflict</a></li>');
           document.write('<li><a href="c9-questions.html">How To Ask A Good Question</a></li>');
+          document.write('<li><a href="deep-thoughts.html">Deep Thoughts</a></li>');
         document.write('</ul>');
