@@ -10,8 +10,9 @@
          document.write('<li><a href="t8-tech.html">SQL Injection</a></li>');
          document.write('<li><a href="t9-new-site-design.html">New Site Design</a></li>');
          document.write('<li><a href="t10-js-write-method.html">Making Life Easier With JavaScript</a></li>');
-         document.write('<li><a href="t11-json-intro.html">Who Is JSON And Why Should I Care</a></li>')
-         document.write('<li><a href="t12-linkedlists-trees.html">Linked Lists and Trees</a></li>')
+         document.write('<li><a href="t11-json-intro.html">Who Is JSON And Why Should I Care</a></li>');
+         document.write('<li><a href="t12-linkedlists-trees.html">Linked Lists and Trees</a></li>');
+         document.write('<li><a href="Rack-Middleware.html">Rack Middleware</a></li>');
       document.write('</ul>');
 
 
@@ -25,5 +26,5 @@
           document.write('<li><a href="c7-values.html">Exploring My Values</a></li>');
           document.write('<li><a href="c8-conflict.html">Conflict</a></li>');
           document.write('<li><a href="c9-questions.html">How To Ask A Good Question</a></li>');
-          document.write('<li><a href="deep-thoughts.html">Deep Thoughts</a></li>');
+          document.write('<li><a href="Recruitify_Interview.html">Recruitify Interview</a></li>');
         document.write('</ul>');
