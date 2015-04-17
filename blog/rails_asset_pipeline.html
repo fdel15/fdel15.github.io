@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Frank DelPidio | Web Developer</title>
+    <link rel="stylesheet" href="../css/normalize.css" >
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" id="logo">
+        <h1>Frank DelPidio</h1>
+        <h2>Web Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Portfolio</a></li>
+          <li><a href="home.html" class="selected">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section id="primary">
+        <h3>Rails Asset PipeLine</h3> <!--Title Of Blog Post -->
+
+        <p class="date">March 12th 2015</p> <!--Date -->
+
+        <p>In Chapter 5 of the Rails tutorial, we polish up some of the routes, create partials, and style our layout page. The styling section talks about how the Rails Asset Pipeline works, but I thought it would be beneficial to give a little bit more background information that is not provided in the tutorial.</p>
+
+        <h4>What is the Rails Asset Pipeline?</h4>
+        <p>A framework (a basic structure underlying a system, concept, or text.) to concatenate and minify or compress JavaScript and CSS assets. It also adds the ability to write these assets in other languages such as CoffeeScript, Sass, and ERB.</p>
+
+        <h4>Why do you want to concatenate and compress these files?</h4>
+
+        <p>The major benefit of having assets pre-processed, compressed and minified by one central library (Sprockets) is that it makes Rails fast by default.</p>
+
+        <h4>What does concatenate assets mean?</h4>
+
+        <p>In production, it reduces the number of requests that a browser must make to render a web page. Web browsers are limited in the number of requests they can make in parallel so fewer requests can mean faster loading for your application.</p>
+
+        <h4>What does minifiying and compressing assets mean?</h4>
+
+        <p>For CSS files this is done by removing whitespace and comments.</p>
+
+        <p>For Javascript, more complex processes can be applied and you can choose from a set of built in options or specify your own.</p>
+
+        <p>The third feature of the asset pipeline is that it allows coding assets via a higher-level language, with precompilation down to the actual assets. Supported languages include Sass for CSS, CoffeeScript for JavaScript, and ERB for both by default.</p>
+
+        <p>Thanks for reading</p> <!--Blog Post Content -->
+      </section>
+      <section id="secondary">
+        <script language="JavaScript" type="text/javascript" src="../js/sidebar.js">
+        </script>
+      </section>
+      <footer>
+         <a href="http://twitter.com/fdel15"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/frank.delpidio"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <a href="https://github.com/fdel15"><img src="../img/github-logo.svg"/ alt="Github Logo" class="social-icon"></a>
+        <a href="https://www.linkedin.com/profile/view?id=296975658&trk=nav_responsive_tab_profile"><img src="../img/social_linkedin.png"/ alt="Linked-In Logo" class="social-icon"></a>
+        <a href="http://www.quora.com/Frank-DelPidio"><img src="../img/quora-logo.png"/ alt="Quora Logo" class="social-icon"></a>
+        <p>&copy; 2014 Frank DelPidio.</p>
+      </footer>
+      </div>
+  </body>
+</html>
