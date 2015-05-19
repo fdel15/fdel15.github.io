@@ -132,6 +132,11 @@ PAGE PORTFOLIO
  color: #666;
 }
 
+#gallery img {
+  height: 165px;
+  min-width: 100%;
+}
+
 
 /****************************
 PAGE ABOUT
