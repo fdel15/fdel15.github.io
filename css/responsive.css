@@ -1,3 +1,17 @@
+@media screen and (min-width: 200px) {
+  /****************************
+   PAGE: PORTFOLIO
+  ****************************/
+
+  #gallery li {
+    width: 90%;
+  }
+
+  #gallery li:nth-child(4n) {
+    clear: left;
+  }
+}
+
 @media screen and (min-width: 480px) {
 
   /****************************
@@ -25,17 +39,6 @@
 }
 
 
-  /****************************
-   PAGE: PORTFOLIO
-  ****************************/
-
-  #gallery li {
-    width: 28.3333%;
-  }
-
-  #gallery li:nth-child(4n) {
-    clear: left;
-  }
 
 
   /****************************
@@ -51,7 +54,7 @@
 
 
 
-@media screen and (min-width: 660px){
+@media screen and (min-width: 680px){
 
    /****************************
    HEADER
@@ -86,6 +89,15 @@
     border-bottom: 5px solid #599a68;
     margin-bottom: 60px;
   }
+
+   /****************************
+   PAGE: PORTFOLIO
+  ****************************/
+
+  #gallery li {
+    width: 28%;
+  }
+
 
 
 
