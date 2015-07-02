@@ -1,2 +1,5 @@
 highlighter: pygments
 author: Frank DelPidio
+permalink: "/blog/:title"
+paginate_path: "blog/page:num/"
+paginate: 5
