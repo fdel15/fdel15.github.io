@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <div id="wrapper">
+      <section id="primary">
+
+        <h3> {{ page.title }} </h3>
+
+        <p class="date">{{ page.date | date: '%B %d, %Y' }}</p>
+
+        {{ content }}
+      </section>
+      {% include side_bar.html %}
+      {% include footer.html %}
+    </div>
+  </body>
+</html>
