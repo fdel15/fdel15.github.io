@@ -195,6 +195,10 @@ PAGE: BLOG
   padding: 0 0 5px;
 }
 
+.blog-post-sidebar a:hover{
+  background-color: gainsboro;
+}
+
 #culture-heading {
   margin: 5px 0;
 }

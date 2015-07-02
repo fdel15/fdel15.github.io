@@ -19,13 +19,14 @@
   ****************************/
 
   #primary {
-    width: 50%;
+    width: 70%;
     float: left;
   }
 
   #secondary{
-    width: 40%;
+    width: 30%;
     float: right;
+    margin-right: -10%;
   }
 
   #nav {
