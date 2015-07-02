@@ -1,27 +1,14 @@
 <section id="secondary">
-  <h3>Dev Bootcamp</h3>
-  {% for post in site.categories.dbc %}
-  <ul class="blog-post-sidebar">
-    <li><a href={{post.url}}>{{post.title}}</a></li>
-  <ul class="blog-post-sidebar">
-  {% endfor %}
 
-<h3>Books I'm Reading</h3>
-  {% for post in site.categories.books %}
-  <ul class="blog-post-sidebar">
-    <li><a href={{post.url}}>{{post.title}}</a></li>
-  <ul class="blog-post-sidebar">
-  {% endfor %}
-
-<h3>Technologies I'm Learning</h3>
+<h3>Tech</h3>
   {% for post in site.categories.tech %}
   <ul class="blog-post-sidebar">
     <li><a href={{post.url}}>{{post.title}}</a></li>
   <ul class="blog-post-sidebar">
   {% endfor %}
 
-<h3>Self Improvement</h3>
-  {% for post in site.categories.self %}
+<h3>Books</h3>
+  {% for post in site.categories.books %}
   <ul class="blog-post-sidebar">
     <li><a href={{post.url}}>{{post.title}}</a></li>
   <ul class="blog-post-sidebar">
@@ -34,10 +21,4 @@
   <ul class="blog-post-sidebar">
   {% endfor %}
 
-<h3>Open Source</h3>
-  {% for post in site.categories.opensource %}
-  <ul class="blog-post-sidebar">
-    <li><a href={{post.url}}>{{post.title}}</a></li>
-  <ul class="blog-post-sidebar">
-  {% endfor %}
 </section>
