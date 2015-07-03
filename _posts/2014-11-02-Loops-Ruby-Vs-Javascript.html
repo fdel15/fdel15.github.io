@@ -1,0 +1,62 @@
+---
+layout: post
+title: Loops In Ruby And Javascript
+category: Tech
+---
+
+<p>One of the major differences between coding in Ruby and coding in Javascript is the way each language handles loops.</p>
+
+<p>Loops are a common part of every programming language. They allow a program to repeat the same action a set number of times or until a specified condition is met. Loops are an essential part of keeping your code DRY.</p>
+
+<p>There are many different ways to create loops in Ruby. You can use specified keywords or methods. One way to perform an action a set number of times is to use the .times method, for example if you want print out a sentence three times:</p>
+
+<p class="code-example">3.times {p “I love Ruby!”}</p>
+
+<p>If you want to create a loop until a specific condition is met you can youse the while keyword. The following loop will continue until the variable i is greater than or equal to 3.:</p>
+
+<ul class="code-example">
+  <li>i = 0</li>
+  <li>while i < 3</li>
+    <li class="conditional">  p “I love Ruby!”</li>
+    <li class="conditional">i += 1</li>
+  <li>end</li>
+</ul>
+
+<p>Ruby also has a bunch of different methods to loop through a data structure. Some of the methods include .each, .map, and .inject. These methods make it simple to find the sum of an array of integers:</p>
+
+<p class="code-example">
+  array = [1,3,5,6]<br><br>
+  array.inject{ |sum, num| sum + num} <span class="output">=> 15</span>
+</p>
+
+<p>JavaScript on the other hand only offers two keywords for creating loops. They are the keywords for and while. These two keywords are powerful enough for you to create all of the different kinds of loops that are available in the Ruby language, you just have to work a little bit harder as a programmer.</p>
+
+<p>The while loop in JavaScript behaves much like the while loop in Ruby, however the syntax is a little more detailed:</p>
+
+<ul class="code-example">
+  <li><p>var n = 1;</p></li>
+  <li>while (n <= 3) {</li>
+    <li class="conditional">console.log(“I love JavaScript!”);</li>
+    <li class="conditional">n += 1</li>
+  <li>}</li>
+</ul>
+
+<p>For loops are useful for looping a given number of iterations, much like the .times method in Ruby. For loops take in 3 parameters: the first parameter defines a variable, the second parameter defines the number of iterations, and the third parameter increases or decreases the variable after each iteration.</p>
+
+<ul class="code-example">
+  <li>for (var i = 0; i < 3; i++) {</li>
+    <li class="conditional">console.log(“I love JavaScript”)</li>
+  <li>}</li>
+</ul>
+
+<p>If you want to loop through an Array in JavaScript you can use a modified version of the for loop called the for (x in y) syntax where x is a variable representing an increment able value and y represents an object with a length property such as an array. Here’s our previous Ruby example done in JavaScript:</p>
+
+<ul class="code-example">
+  <li>sum = 0</li>
+  <li>array = [1,3,5,6]</li>
+  <li>for (i in array) { sum += array[i]} <span class="output">=> 15</span></li>
+</ul>
+
+<p>That is a brief comparison of the differences of loops between Ruby and JavaScript. Hopefully you have a little bit better understanding after reading this post. </p>
+
+<p>Thanks for reading.</p>
