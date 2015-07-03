@@ -5,10 +5,10 @@
   </a>
   <nav>
     <ul>
-      <li><a href="/index.html">Portfolio</a></li>
-      <li><a href="/blog/index.html" class="selected">Blog</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/index.html" {% if page.url == "/index.html" %} class="selected" {% endif %}>Portfolio</a></li>
+      <li><a href="/blog/index.html" {% if page.url contains "blog" %} class="selected" {% endif %}>Blog</a></li>
+      <li><a href="/about.html" {% if page.url == "/about.html" %} class="selected" {% endif %}>About</a></li>
+      <li><a href="/contact.html" {% if page.url == "/contact.html" %} class="selected" {% endif %}>Contact</a></li>
     </ul>
   </nav>
 </header>
