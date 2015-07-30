@@ -19,7 +19,7 @@ category: Reflections
 
 <p class="quote">"Every day I write down ideas"</p>
 
-<p>What an interesting thing to do. He claims that this process of writing down 10 ideas every day exercises your idea muscle, and if you don't use this muscle it atrophies. I'm not sure how much that is true but I like challenging myself to come up with 10 ideas every day. Every day I am going to have a topic and come up with as many ideas as I can based on that topic. My goal is to have at least 10 ideas every day. I will make each list a separate blog post and link to them from here. In case I struggle to come up with ideas: </p>
+<p>What an interesting thing to do. He claims that this process of writing down 10 ideas every day exercises your idea muscle, and if you don't use this muscle it atrophies. I'm not sure how true that is, but I like challenging myself to come up with 10 ideas every day. Every day I am going to have a topic and come up with as many ideas as I can based on that topic. My goal is to have at least 10 ideas every day. I will make each list a separate blog post and link to them from here. In case I struggle to come up with ideas: </p>
 
 <p class="quote">"Need ideas for lists of ideas? Come up with 30 separate chapters for an “autobiography”. Try to think of 10 businesses you can start from home (and be realistic how you can execute them)? Give me 10 ideas of directions this blog can go in.  Think of 20 ways Obama can improve the country. List every productive thing you did yesterday (this improves memory also and gives you ideas for today)."</p>
 
@@ -28,7 +28,7 @@ category: Reflections
 <h4>10 Ideas A Day</h4>
 
 {% for post in site.categories.10ideas %}
-  <li><a href={{post.url}}>{{post.title}}</a></li>
+  <li><a href={{ post.url }}>{{ post.title }} ({{ post.date | date: '%B %d, %Y'}})</a></li>
 {% endfor %}
 
 <p>Thanks for reading.</p>
