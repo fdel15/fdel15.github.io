@@ -216,6 +216,18 @@ PAGE: BLOG
   margin: 5px 0;
 }
 
+.quote {
+  font-size: 1.25em;
+  font-family: cursive;
+  text-align: center;
+  margin: 20px 10%;
+}
+
+.sublist {
+  list-style: initial;
+  margin: 0.25em;
+}
+
 
 /****************************
 CODE EXAMPLES
@@ -419,6 +431,10 @@ nav a.selected, nav a:hover {
 
 .question{
   color: #206F13;
+}
+
+.quote {
+  color: #838383;
 }
 
 .main {
