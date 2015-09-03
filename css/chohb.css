@@ -28,6 +28,16 @@ body {
     padding: 5px;
   }
 
+  .ff-links li {
+    display: inline;
+    margin: 0 15px;
+    list-style: none;
+  }
+
+  .ff-links li a {
+    text-decoration: none;
+  }
+
   .icon {
     height: 20px;
     margin: 2.5px 5px;
