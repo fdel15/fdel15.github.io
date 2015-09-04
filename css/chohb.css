@@ -115,8 +115,8 @@ a:visited {color: blue;}
   }
 
   jumbotron {
-    display: -webkit-flex;
     display: flex;
+    display: -webkit-flex;
     align-items: center;
     justify-content: center;
   }
