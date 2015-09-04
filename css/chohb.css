@@ -114,6 +114,11 @@ a:visited {color: blue;}
     margin-bottom: 10px;
   }
 
+  .instructions {
+    font-weight: bold;
+    text-align: center;
+  }
+
 
   footer {
     /*border: black 3px solid;*/
