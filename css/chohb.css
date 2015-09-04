@@ -114,6 +114,12 @@ a:visited {color: blue;}
     margin-bottom: 10px;
   }
 
+  jumbotron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .instructions {
     font-weight: bold;
     text-align: center;
