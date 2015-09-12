@@ -72,6 +72,7 @@ a:visited {color: blue;}
     padding: 10px 0;
     -webkit-flex: 1;
     flex: 1;
+    min-height: 510px;
   }
 
   .pong-layout {
@@ -149,7 +150,7 @@ a:visited {color: blue;}
     background: rgb(5, 100, 0);
     text-align: center;
     color: white;
-    position: absolute;
+    position: relative;
     width: 100%;
     bottom: 0;
   }
