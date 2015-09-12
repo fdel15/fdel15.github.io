@@ -147,7 +147,11 @@ a:visited {color: blue;}
     /*border: black 3px solid;*/
     padding: 20px 0;
     background: rgb(5, 100, 0);
-    margin-top: 300px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
   }
 
   .date {
