@@ -5,6 +5,7 @@
 
   #gallery li {
     width: 90%;
+    height: 370px;
   }
 
   #gallery li:nth-child(4) {
@@ -97,6 +98,7 @@
 
   #gallery li {
     width: 28%;
+    height: 460px;
   }
 
 
