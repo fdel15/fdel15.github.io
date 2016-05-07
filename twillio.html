@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+    function hotelAjax(){
+      $.ajax({
+      type: "POST",
+      dataType: 'jsonp',
+      url: "https://mhacks-hunt-spring-2016.herokuapp.com/hotel",
+      data: { token: "KzE4NTY5MDY0MTc2"},
+      success:function(data) {
+        console.log(data)
+      }
+      })
+      // .done(function(data) {
+      //   $.ajax({
+      //     url: "https://mhacks-hunt-spring-2016.herokuapp.com/icicle?token=KzE4NTY5MDY0MTc2fDE0NjI2NDM3MzQ1MjY",
+      //   }).done(function(data){
+      //     console.log(data)
+      //   })
+      // })
+    }
+    hotelAjax();
+</script>
+  </head>
+  <body>
+    Please Work!
+  </body>
+</html>
