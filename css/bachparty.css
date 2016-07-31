@@ -1,0 +1,22 @@
+.pic {
+  width: 100%;
+  max-width: 500px;
+  display: none;
+}
+
+#carousel p {
+  text-align: center;
+}
+
+.active {
+  display: initial;
+}
+
+ul li {
+  display: inline-block;
+  padding: 25px;
+}
+
+ul li p {
+  text-align: center;
+}
