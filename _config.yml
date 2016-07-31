@@ -1,4 +1,4 @@
-highlighter: pygments
+highlighter: rouge
 author: Frank DelPidio
 permalink: "/blog/:title"
 paginate_path: "blog/page:num/"
