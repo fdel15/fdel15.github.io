@@ -3,6 +3,7 @@ var index = 0;
 var pic;
 var cruise = new Date(2016, 8, 9, 17)
 var today;
+var audio = new Audio('the-final-countdown.mp3')
 
 cruise = cruise.valueOf();
 
@@ -32,6 +33,7 @@ function countDown() {
 }
 
 $(document).ready(function(){
+  audio.play()
   images = $('#carousel img')
   pic = $(images[index])
   nextPic()

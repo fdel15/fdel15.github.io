@@ -12,12 +12,14 @@
   display: initial;
 }
 
-ul li {
+#timer ul li {
   display: inline-block;
-  padding: 25px;
+  width: 20%;
+  padding: 2%;
+  text-align: center;
 }
 
-ul li p {
+#timer ul li p {
   text-align: center;
 }
 

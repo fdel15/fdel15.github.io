@@ -11,6 +11,11 @@
   #gallery li:nth-child(4) {
     clear: left;
   }
+
+  #timer ul li {
+    font-size: 0.7em;
+    width: 15%;
+  }
 }
 
 @media screen and (min-width: 480px) {
