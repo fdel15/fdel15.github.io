@@ -20,3 +20,7 @@ ul li {
 ul li p {
   text-align: center;
 }
+
+audio {
+  display:  none;
+}
