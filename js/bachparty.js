@@ -7,6 +7,14 @@ var audio = new Audio('the-final-countdown.mp3')
 
 cruise = cruise.valueOf();
 
+function detectmob() {
+   if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+     return true;
+   } else {
+     return false;
+   }
+}
+
 function nextPic() {
   pic.addClass('animated fadeOutLeft')
   pic.removeClass()
@@ -32,12 +40,36 @@ function countDown() {
   setTimeout(countDown, 1000)
 }
 
+function displayModal() {
+  var modal = document.getElementById('myModal');
+
+  $('#carousel').hide();
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  modal.style.display = "block";
+
+ $("#yes").click(function(){
+    audio.play();
+    modal.style.display = "none";
+    $('#carousel').show();
+ })
+
+ $("#no").click(function(){
+    modal.style.display = "none";
+    $('#carousel').show();
+ })
+
+}
+
 $(document).ready(function(){
-  audio.play()
+  if( detectmob() ) { displayModal() } else { audio.play()}
   images = $('#carousel img')
   pic = $(images[index])
-  nextPic()
-  countDown()
+  nextPic();
+  countDown();
+
 
   // $('#btn').click(function(){
   //   pic.addClass('animated fadeOutLeft')
