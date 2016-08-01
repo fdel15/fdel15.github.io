@@ -59,11 +59,15 @@ function displayModal() {
     audio.play();
     modal.style.display = "none";
     $('#carousel').show();
+    $('#music').show()
+    $('#music').text('Play')
  })
 
  $("#no").click(function(){
     modal.style.display = "none";
     $('#carousel').show();
+    $('#music').show()
+    $('#music').text('Stop')
  })
 
 }
@@ -74,7 +78,10 @@ $(document).ready(function(){
   pic = $(images[index])
   nextPic();
   countDown();
-  $(this).focusOut(function() { audio.stop })
+  $('#music').click(function(){
+    if( $(this).text() === 'Play') { audio = new Audio('the-final-countdown.mp3'; audio.play();) } else { audio.pause() }
+  })
+
 
 
   // $('#btn').click(function(){

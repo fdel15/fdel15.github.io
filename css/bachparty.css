@@ -70,7 +70,16 @@ audio {
   background-color: #d03131;
 }
 
-#yes:hover, #no:hover {
+#music {
+  display: none;
+  background-color: #58c43d;
+  width: 80%;
+  margin: 15px 10%;
+  border: solid #888;
+  color: white;
+}
+
+#yes:hover, #no:hover, #music:hover {
   cursor: pointer;
 }
 
