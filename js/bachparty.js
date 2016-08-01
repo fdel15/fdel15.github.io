@@ -15,6 +15,11 @@ function detectmob() {
    }
 }
 
+function isFacebookApp() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+}
+
 function nextPic() {
   pic.addClass('animated fadeOutLeft')
   pic.removeClass()
@@ -64,7 +69,7 @@ function displayModal() {
 }
 
 $(document).ready(function(){
-  if( detectmob() ) { displayModal() } else { audio.play()}
+  if( detectmob() || isFacebookApp() ) { displayModal() } else { audio.play()}
   images = $('#carousel img')
   pic = $(images[index])
   nextPic();
