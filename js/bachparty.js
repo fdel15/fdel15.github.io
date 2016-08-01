@@ -74,6 +74,7 @@ $(document).ready(function(){
   pic = $(images[index])
   nextPic();
   countDown();
+  $(this).focusOut(function() { audio.stop })
 
 
   // $('#btn').click(function(){
