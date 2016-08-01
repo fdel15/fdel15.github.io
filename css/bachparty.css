@@ -77,6 +77,8 @@ audio {
   margin: 15px 10%;
   border: solid #888;
   color: white;
+  text-align: center;
+  padding: 5px;
 }
 
 #yes:hover, #no:hover, #music:hover {

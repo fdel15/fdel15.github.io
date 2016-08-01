@@ -60,26 +60,34 @@ function displayModal() {
     modal.style.display = "none";
     $('#carousel').show();
     $('#music').show()
-    $('#music').text('Play')
+    $('#music').text('Stop')
  })
 
  $("#no").click(function(){
     modal.style.display = "none";
     $('#carousel').show();
     $('#music').show()
-    $('#music').text('Stop')
+    $('#music').text('Play')
  })
 
 }
 
 $(document).ready(function(){
-  if( detectmob() || isFacebookApp() ) { displayModal() } else { audio.play()}
+  // if( detectmob() || isFacebookApp() ) { displayModal() } else { audio.play()}
+  displayModal();
   images = $('#carousel img')
   pic = $(images[index])
   nextPic();
   countDown();
   $('#music').click(function(){
-    if( $(this).text() === 'Play') { audio = new Audio('the-final-countdown.mp3'; audio.play();) } else { audio.pause() }
+    if( $(this).text() === 'Play') {
+      audio = new Audio('the-final-countdown.mp3');
+      audio.play();
+      $('#music').text('Stop')
+    } else {
+      audio.pause()
+      $('#music').text('Play')
+    }
   })
 
 
