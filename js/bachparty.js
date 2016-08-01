@@ -73,8 +73,7 @@ function displayModal() {
 }
 
 $(document).ready(function(){
-  // if( detectmob() || isFacebookApp() ) { displayModal() } else { audio.play()}
-  displayModal();
+  if( detectmob() || isFacebookApp() ) { displayModal() } else { $('#music').show(); audio.play()}
   images = $('#carousel img')
   pic = $(images[index])
   nextPic();
